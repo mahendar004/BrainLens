@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BrainLens Stroke Detection</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background: linear-gradient(135deg,#1e3c72,#2a5298);
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:20px;
+        }
+
+        .container{
+            width:750px;
+            background:white;
+            padding:40px;
+            border-radius:15px;
+            text-align:center;
+            box-shadow:0px 5px 20px rgba(0,0,0,0.3);
+        }
+
+        h1{
+            color:#1e3c72;
+            margin-bottom:10px;
+        }
+
+        .subtitle{
+            color:gray;
+            margin-bottom:25px;
+        }
+
+        input[type="file"]{
+            margin:20px 0;
+        }
+
+        button{
+            background:#1e3c72;
+            color:white;
+            border:none;
+            padding:12px 25px;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;
+            margin-top:10px;
+        }
+
+        button:hover{
+            background:#16325c;
+        }
+
+        .result{
+            margin-top:30px;
+            padding:20px;
+            background:#f4f4f4;
+            border-radius:10px;
+        }
+
+        .normal{
+            color:green;
+            font-size:22px;
+            font-weight:bold;
+            margin-top:15px;
+        }
+
+        .stroke{
+            color:red;
+            font-size:22px;
+            font-weight:bold;
+            margin-top:15px;
+        }
+
+        .guidance{
+            margin-top:20px;
+            font-size:18px;
+            line-height:1.6;
+        }
+
+        .uploaded-image{
+            margin-top:20px;
+        }
+
+        .uploaded-image img{
+            width:250px;
+            border-radius:10px;
+            box-shadow:0px 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .download-btn{
+            margin-top:20px;
+        }
+
+        footer{
+            margin-top:30px;
+            color:gray;
+            font-size:14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🧠 BrainLens Stroke Detection</h1>
+
+    <p class="subtitle">
+        AI Powered Brain CT Scan Stroke Detection and Risk Prediction System
+    </p>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if filename %}
+    <div class="uploaded-image">
+        <h3>Uploaded CT Scan</h3>
+        <br>
+        <img src="{{ url_for('static', filename='uploads/' + filename) }}">
+    </div>
+    {% endif %}
+
+    {% if result %}
+    <div class="result">
+
+        <h2>Prediction Result</h2>
+
+        <p class="normal">
+            Normal Probability: {{ result.normal }}
+        </p>
+
+        <p class="stroke">
+            Stroke Probability: {{ result.stroke }}
+        </p>
+
+        <div class="guidance">
+            {{ result.guidance }}
+        </div>
+
+        <div class="download-btn">
+            <a href="/download_report">
+                <button type="button">
+                    📄 Download Report
+                </button>
+            </a>
+        </div>
+
+    </div>
+    {% endif %}
+
+    <footer>
+        BrainLens © 2026 | Deep Learning Based Stroke Detection
+    </footer>
+
+</div>
+
+</body>
+</html>

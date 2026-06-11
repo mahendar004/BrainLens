@@ -1,0 +1,21 @@
+venv/
+__pycache__/
+*.pyc
+
+# Models
+*.h5
+*.keras
+
+# Datasets
+Dataset/
+Dataset-/
+data/
+
+# Generated files
+*.png
+*.jpg
+
+# Documents
+*.pdf
+*.pptx
+*.docx
