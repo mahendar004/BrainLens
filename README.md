@@ -1,50 +1,100 @@
-# BrainLens: Multimodal AI for Stroke Detection and Risk Prediction
+# 🧠 BrainLens - Stroke Detection and Risk Prediction System
 
 ## Overview
 
-BrainLens is an AI-powered healthcare application that detects stroke probability from Brain CT Scan images using Deep Learning techniques. The system uses a Convolutional Neural Network (CNN) model to classify CT scans and provide medical guidance based on prediction results.
+BrainLens is an AI-powered healthcare application that analyzes Brain CT Scan images and predicts the probability of stroke using Deep Learning.
+
+The system validates uploaded CT scans, performs prediction using a CNN model, provides medical guidance, and generates a downloadable PDF report.
+
+---
 
 ## Features
 
-* Brain CT Scan Upload
-* CT Scan Validation using OpenCV
-* Stroke Detection using CNN
-* Normal and Stroke Probability Prediction
-* Medical Guidance Generation
-* PDF Report Download
-* User-Friendly Web Interface
+✅ Brain CT Scan Upload
+
+✅ CT Scan Validation using OpenCV
+
+✅ Deep Learning Based Stroke Detection
+
+✅ Stroke Probability Prediction
+
+✅ Medical Guidance Recommendation
+
+✅ PDF Report Generation
+
+✅ User-Friendly Web Interface
+
+---
 
 ## Technologies Used
 
-* Python
-* Flask
-* TensorFlow
-* Keras
-* OpenCV
-* NumPy
-* Pillow
-* ReportLab
-* HTML
-* CSS
+- Python
+- Flask
+- TensorFlow
+- Keras
+- OpenCV
+- NumPy
+- Pillow
+- ReportLab
+- HTML
+- CSS
 
-## Project Workflow
+---
 
-1. Upload Brain CT Scan
-2. Validate Image
-3. Preprocess Image
-4. CNN Model Prediction
-5. Generate Stroke Probability
-6. Display Medical Guidance
-7. Download PDF Report
+## System Architecture
 
-## Future Scope
+CT Scan Image
+↓
+OpenCV Validation
+↓
+Image Preprocessing
+↓
+CNN Model
+↓
+Prediction
+↓
+Guidance Generation
+↓
+PDF Report
 
-* MRI Scan Support
-* Real-Time Hospital Integration
-* Doctor Dashboard
-* Cloud Deployment
-* Advanced Deep Learning Models
+---
+
+## Home Page
+
+![Home Page](Home_Page.png)
+
+---
+
+## CT Scan Upload
+
+![CT Scan Upload](CT_Scan_Upload.png)
+
+---
+
+## Prediction Result
+
+![Prediction Result](Prediction_Result.png)
+
+---
+
+## PDF Report
+
+![PDF Report](PDF_Report.png)
+
+---
+
+## Future Enhancements
+
+- Multi-Disease Detection
+- MRI Scan Support
+- Cloud Deployment
+- Doctor Dashboard
+- Patient History Tracking
+
+---
 
 ## Author
 
-P. Mahendar
+Mahendar P
+
+BrainLens – AI Powered Stroke Detection System
